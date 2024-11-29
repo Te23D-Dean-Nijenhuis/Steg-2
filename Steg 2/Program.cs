@@ -1,18 +1,43 @@
 ﻿using System.Runtime.ConstrainedExecution;
 
-string[] saker = ["leksak1","leksak2","leksak3","leksak4","leksak5"];
+List<string> saker = ["leksak1","leksak2","leksak3","leksak4","leksak5"];
 
-string[] namn = ["Dean","Rasmus","Martin","Joakim","Anton"];
+List<string> namn = ["Dean","Rasmus","Martin","Joakim","Anton"];
 
-int[] nummer = [1,3,5,7,9];
+List<string> stader = [];
 
-for (int i = 0; i < 5; i++)
+List<int> nummer = [1,3,5,7,9];
+
+// for (int i = 0; i < 5; i++)
+// {
+//     int r = Random.Shared.Next(0,5);
+//     int r2 = Random.Shared.Next(0,5);
+//     int r3 = Random.Shared.Next(0,5);
+
+//     Console.WriteLine($"{namn[r]} ger {saker[r2]} betyget {nummer[r3]}");
+// }
+
+// Console.ReadLine();
+
+bool run = true;
+string stad;
+
+while (run)
 {
-    int r = Random.Shared.Next(0,5);
-    int r2 = Random.Shared.Next(0,5);
-    int r3 = Random.Shared.Next(0,5);
+    Console.WriteLine("skriv in ett namn på en stad eller skriv exit om du vill lämna.");
+    stad = Console.ReadLine();
+    if (stad.ToLower() == "exit")
+    {
+        run = false;
+        for (int i = 0; i < stader.Count; i++)
+        {
+            Console.WriteLine(stader[i]);
+        }
 
-    Console.WriteLine($"{namn[r]} ger {saker[r2]} betyget {nummer[r3]}");
+    } else
+    {
+        stader.Add(stad);
+    }
 }
 
 Console.ReadLine();
